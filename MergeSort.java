@@ -4,16 +4,6 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-class TrieNode {
-	public TrieNode[] nodes = new TrieNode[10];
-	public boolean isEndOfWord;
-
-	public TrieNode() {
-		isEndOfWord = false;
-
-	}
-}
-
 public class Solution {
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -80,3 +70,4 @@ public class Solution {
             mainIdex++;
         }
     }
+}
