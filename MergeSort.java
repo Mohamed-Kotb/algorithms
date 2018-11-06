@@ -36,48 +36,47 @@ public class Solution {
 	}
 
 	static void sort(int[] array, int startIndex, int endIndex) {
-		if (startIndex < endIndex) {
-			int middleIndex = startIndex + (endIndex - startIndex) / 2;
-			sort(array, startIndex, middleIndex);
-			sort(array, middleIndex + 1, endIndex);
-			merg(array, startIndex, middleIndex, endIndex);
-		}
-	}
+        if (startIndex < endIndex) {
+            int middleIndex = startIndex + (endIndex - startIndex) / 2;
+            sort(array, startIndex, middleIndex);
+            sort(array, middleIndex + 1, endIndex);
+            merg(array, startIndex, middleIndex, endIndex);
+        	}
+    	}
 
-	static void merg(int[] a, int startIndex, int middleIndex, int endIndex) {
-		int leftPartLength = middleIndex - startIndex + 1;
-		int rightPartLength = endIndex - middleIndex;
-		int[] leftPart = new int[leftPartLength];
-		int[] rightPart = new int[rightPartLength];
-		for (int i = 0; i < leftPartLength; i++) {
-			leftPart[i] = a[i + startIndex];
-		}
-		for (int i = 0; i < rightPartLength; i++) {
-			rightPart[i] = a[i + middleIndex + 1];
-		}
-		int leftIndex = 0;
-		int rightIndex = 0;
-		int mainIdex = startIndex;
-		while (leftIndex < leftPartLength && rightIndex < rightPartLength) {
-			if (leftPart[leftIndex] < rightPart[rightIndex]) {
-				a[mainIdex] = leftPart[leftIndex];
-				leftIndex++;
-				mainIdex++;
-			} else {
-				a[mainIdex] = rightPart[rightIndex];
-				rightIndex++;
-				mainIdex++;
-			}
-		}
-		while (leftIndex < leftPartLength) {
-			a[mainIdex] = leftPart[leftIndex];
-			leftIndex++;
-			mainIdex++;
-		}
-		while (rightIndex < rightPartLength) {
-			a[mainIdex] = rightPart[leftIndex];
-			rightIndex++;
-			mainIdex++;
-		}
-	}
-}
+    static void merg(int[] a, int startIndex, int middleIndex, int endIndex) {
+        int leftPartLength = middleIndex - startIndex + 1;
+        int rightPartLength = endIndex - middleIndex;
+        int[] leftPart = new int[leftPartLength];
+        int[] rightPart = new int[rightPartLength];
+        for (int i = 0; i < leftPartLength; i++) {
+            leftPart[i] = a[i + startIndex];
+        }
+        for (int i = 0; i < rightPartLength; i++) {
+            rightPart[i] = a[i + middleIndex + 1];
+        }
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int mainIdex = startIndex;
+        while (leftIndex < leftPartLength && rightIndex < rightPartLength) {
+            if (leftPart[leftIndex] < rightPart[rightIndex]) {
+                a[mainIdex] = leftPart[leftIndex];
+                leftIndex++;
+                mainIdex++;
+            } else {
+                a[mainIdex] = rightPart[rightIndex];
+                rightIndex++;
+                mainIdex++;
+            }
+        }
+        while (leftIndex < leftPartLength) {
+            a[mainIdex] = leftPart[leftIndex];
+            leftIndex++;
+            mainIdex++;
+        }
+        while (rightIndex < rightPartLength) {
+            a[mainIdex] = rightPart[rightIndex];
+            rightIndex++;
+            mainIdex++;
+        }
+    }
