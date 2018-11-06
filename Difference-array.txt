@@ -1,0 +1,8 @@
+Given an array of numbers, we can construct a new array by replacing each element by the difference between itself and the previous element,
+except for the first element, which we simply ignore. 
+This is called the difference array, because it contains the first differences of the original array.
+We will denote the difference array of array A by D(A). 
+For example, 
+the difference array of A = [9, 2, 6, 3, 1, 5, 0, 7] is D(A) = [2-9, 6-2, 3-6, 1-3, 5-1, 0-5, 7-0], or [-7, 4, -3, -2, 4, -5, 7].
+
+We see that the difference array can be computed in linear time from the original array, and is shorter than the original array by one element
